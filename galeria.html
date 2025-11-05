@@ -1,0 +1,202 @@
+<html>
+<head>
+    <title>Galería de Trabajos - Bill Gates</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", cursive;
+            background-color: #ffffcc;
+            margin: 10px;
+        }
+        
+        h1 {
+            color: red;
+            text-align: center;
+            font-size: 35px;
+            text-shadow: 2px 2px 4px yellow;
+        }
+        
+        h2 {
+            color: blue;
+            background-color: #ccffff;
+            padding: 5px;
+        }
+        
+        .menu {
+            background-color: lightblue;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        .menu a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: darkblue;
+            font-weight: bold;
+        }
+        
+        .galeria {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .galeria img {
+            width: 180px;
+            height: 130px;
+            border: 5px solid purple;
+            margin: 5px;
+        }
+        
+        .formulario {
+            background-color: #ffccff;
+            padding: 15px;
+            border: 3px solid green;
+            width: 400px;
+            margin: 10px auto;
+        }
+        
+        input, textarea {
+            width: 95%;
+            padding: 5px;
+            margin: 3px 0;
+            border: 2px solid orange;
+        }
+        
+        button {
+            background-color: #ff6666;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            font-size: 16px;
+        }
+        
+        #resultado {
+            background-color: #ccffcc;
+            padding: 10px;
+            border: 2px solid blue;
+            margin: 10px;
+        }
+        
+        .footer {
+            background-color: lightgray;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .trabajo {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        
+        .trabajo p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📚 Mis Trabajos de la Capacitación</h1>
+    
+    <div class="menu">
+        <a href="index.html">Inicio Bill Gates</a> | 
+        <a href="html1.html">Infancia</a> | 
+        <a href="html2.html">Microsoft</a> | 
+        <a href="galeria.html">Galería de Trabajos</a>
+    </div>
+
+    <!-- SECCIÓN GALERÍA DE 10 TRABAJOS -->
+    <h2>🖼 Galería de Mis Trabajos - 4 Semestres</h2>
+    <p>Estos son todos los trabajos que he hecho durante toda la clase</p>
+    
+    <div class="galeria">
+        <div class="trabajo">
+            <img src="trabajos/trabajo1.jpg" alt="Trabajo 1er Semestre">
+            <p>1er trabajo<br>Introducción HTML</p>
+        </div>
+        <div class="trabajo">
+            <img src="trabajos/trabajo2.jpg" alt="Trabajo 1er Semestre">
+            <p>1er trabajo<br>Primera Página Web</p>
+        </div>
+        <div class="trabajo">
+            <img src="trabajos/trabajo3.jpg" alt="Trabajo 2do Semestre">
+            <p>2do trabajo<br>Formularios CSS</p>
+        </div>
+        <div class="trabajo">
+            <img src="trabajos/trabajo4.jpg" alt="Trabajo 2do Semestre">
+            <p>2do trabajo<br>Menús de Navegación</p>
+        </div>
+        <div class="trabajo">
+            <img src="trabajos/trabajo5.jpg" alt="Trabajo 3er Semestre">
+            <p>3er trabajo<br>Proyecto JavaScript</p>
+        </div>
+        <div class="trabajo">
+            <img src="trabajos/trabajo6.jpg" alt="Trabajo 3er Semestre">
+            <p>3er trabajo<br>Base de Datos</p>
+        </div>
+        <div class="trabajo">
+            <img src="trabajos/trabajo7.jpg" alt="Trabajo 4to Semestre">
+            <p>4to trabajo<br>Sitio Responsive</p>
+        </div>
+        <div class="trabajo">
+            <img src="trabajos/trabajo8.jpg" alt="Trabajo 4to Semestre">
+            <p>4to trabajo<br>Avance 1 - Biografía</p>
+        </div>
+        <div class="trabajo">
+            <img src="trabajos/trabajo9.jpg" alt="Trabajo 4to Semestre">
+            <p>4to trabajo<br>Avance 2 - CSS</p>
+        </div>
+        <div class="trabajo">
+            <img src="trabajos/trabajo10.jpg" alt="Trabajo 4to Semestre">
+            <p>4to trabajo<br>Avance 3 - Proyecto</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN FORMULARIO -->
+    <h2>📝 Formulario de Contacto para el Proyecto</h2>
+    <div class="formulario">
+        <form id="miFormulario">
+            <input type="text" name="nombre" placeholder="Escribe tu nombre completo" required>
+            <br><br>
+            <input type="email" name="email" placeholder="Escribe tu email" required>
+            <br><br>
+            <input type="text" name="asunto" placeholder="Asunto del mensaje" required>
+            <br><br>
+            <textarea name="mensaje" placeholder="Escribe tu mensaje sobre el proyecto..." rows="4" required></textarea>
+            <br><br>
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </div>
+    
+    <div id="resultado"></div>
+
+    <script>
+        document.getElementById('miFormulario').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.querySelector('input[name="nombre"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const asunto = document.querySelector('input[name="asunto"]').value;
+            const mensaje = document.querySelector('textarea[name="mensaje"]').value;
+            
+            document.getElementById('resultado').innerHTML = `
+                <h3>✅ ¡Formulario Enviado Exitosamente!</h3>
+                <p><strong>Nombre:</strong> ${nombre}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Asunto:</strong> ${asunto}</p>
+                <p><strong>Mensaje:</strong> ${mensaje}</p>
+                <p><em>El formulario funciona correctamente sin recargar la página</em></p>
+            `;
+            
+            this.reset();
+        });
+    </script>
+
+    <div class="footer">
+        <p>Entrega: 29 de octubre</p>
+    </div>
+
+</body>
+</html>
